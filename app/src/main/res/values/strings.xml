@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">ProjectXYZ</string>
+    <string name="title_home">Home</string>
+    <string name="title_patient_list">Patients List</string>
+    <string name="title_create_patient">Create</string>
+
+
+
+
+
+</resources>
