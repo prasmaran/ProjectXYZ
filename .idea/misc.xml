@@ -12,11 +12,14 @@
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/matches_icon_selector.xml" value="0.1" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/person_add_active.xml" value="0.2045" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/person_add_inactive.xml" value="0.2045" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/rounded_bg.xml" value="0.1" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/selector_home_icon.xml" value="0.1955" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/selector_list_icon.xml" value="0.1955" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/selector_person_add_icon.xml" value="0.1955" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/font/convergence.xml" value="0.284375" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/activity_main.xml" value="0.25416666666666665" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/activity_splash_screen.xml" value="0.25416666666666665" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_base.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_create_patient.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />

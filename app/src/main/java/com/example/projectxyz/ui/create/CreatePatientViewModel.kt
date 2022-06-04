@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 class CreatePatientViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is notifications Fragment"
+        value = "This is create patient fragment"
     }
     val text: LiveData<String> = _text
 }
