@@ -1,8 +1,6 @@
 package com.example.projectxyz.ui.base
 
-import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.core.content.ContextCompat
 import com.example.projectxyz.R
 import com.google.android.material.snackbar.Snackbar

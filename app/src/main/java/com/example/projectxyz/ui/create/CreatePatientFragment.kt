@@ -23,7 +23,6 @@ class CreatePatientFragment : BaseFragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
-
     private var patientName = ""
     private var patientAge = ""
     private var patientIC = ""

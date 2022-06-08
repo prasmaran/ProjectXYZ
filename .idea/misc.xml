@@ -5,8 +5,11 @@
       <map>
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/account_active.xml" value="0.2045" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/account_inactive.xml" value="0.2045" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/gradient.xml" value="0.258" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/home_active.xml" value="0.1955" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/home_inactive.xml" value="0.1955" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/ic_user_female.xml" value="0.258" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/ic_user_male.xml" value="0.258" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/list_active.xml" value="0.2045" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/list_inactive.xml" value="0.2045" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/drawable/matches_icon_selector.xml" value="0.1" />
@@ -22,9 +25,11 @@
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_base.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_create_patient.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_dashboard.xml" value="0.25416666666666665" />
-        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_notifications.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/fragment_patient_list.xml" value="0.25416666666666665" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/patient_list_row_item.xml" value="0.275" />
+        <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/testing_layout.xml" value="0.2526041666666667" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/toolbar_with_actions.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/layout/toolbar_with_back_arrow.xml" value="0.25416666666666665" />
         <entry key="..\:/01PrasanthCodes/ProjectsPras/1AndroidDevelopment/Harinivas/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
