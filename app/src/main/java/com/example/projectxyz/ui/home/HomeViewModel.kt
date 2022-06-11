@@ -11,10 +11,11 @@ class HomeViewModel : ViewModel() {
     private val patientListRepository = PatientListRepository()
 
     private val _measuredDataList = MutableLiveData<List<UserList>>()
-    val measuredDateList: LiveData<List<UserList>> = _measuredDataList
+    val measuredDataList: LiveData<List<UserList>> = _measuredDataList
 
-    fun fetchDataFeed(){
+    fun fetchDataFeed() {
         patientListRepository.fetchDataFeed(_measuredDataList)
     }
+
 
 }

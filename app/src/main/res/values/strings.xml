@@ -20,4 +20,6 @@
     <string name="enter_valid_illness">Do not leave empty</string>
     <string name="validated">Input successfully validated</string>
 
+    <!-- Error showing -->
+    <string name="no_patients_found">No patient list found</string>
 </resources>

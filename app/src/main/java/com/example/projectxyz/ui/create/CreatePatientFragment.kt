@@ -5,15 +5,18 @@ import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.text.TextUtilsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.FragmentCreatePatientBinding
+import com.example.projectxyz.model.new_user.NewPatient
 import com.example.projectxyz.ui.base.BaseFragment
+import com.example.projectxyz.utils.app.AppUtils
 
 class CreatePatientFragment : BaseFragment() {
 
@@ -33,8 +36,9 @@ class CreatePatientFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
+        val createPatientViewModel: CreatePatientViewModel by lazy {
             ViewModelProvider(this)[CreatePatientViewModel::class.java]
+        }
 
         _binding = FragmentCreatePatientBinding.inflate(inflater, container, false)
         val root: View = binding.root
@@ -54,7 +58,25 @@ class CreatePatientFragment : BaseFragment() {
             patientIllness = binding.patientIllnessEt.editText?.text.toString().trim()
 
             if (validateCreatePatient()) {
-                Toast.makeText(requireContext(), "Validated", Toast.LENGTH_SHORT).show()
+                val newPatient = NewPatient(
+                    patientName,
+                    patientIC,
+                    patientAge,
+                    "Female",
+                    patientIllness
+                )
+                val mappedNewUser = newPatient.toMap()
+
+                createPatientViewModel.createNewPatient(mappedNewUser)
+                createPatientViewModel.successResult.observe(viewLifecycleOwner) {
+                    if(it){
+                        AppUtils.showToast(requireContext(),"Successfully created new patient")
+                        findNavController().navigate(R.id.action_navigation_create_patient_to_navigation_home)
+                    } else {
+                        AppUtils.showToast(requireContext(),"Failed creating new patient")
+                    }
+                }
+
             } else {
                 Toast.makeText(requireContext(), "Not validated", Toast.LENGTH_SHORT).show()
             }

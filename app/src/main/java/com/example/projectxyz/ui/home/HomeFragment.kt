@@ -5,12 +5,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.FragmentHomeBinding
 import com.example.projectxyz.utils.adapter.HomeFragmentRVAdapter
+import com.example.projectxyz.utils.app.AppUtils
 
 class HomeFragment : Fragment() {
 
@@ -42,12 +42,13 @@ class HomeFragment : Fragment() {
         binding.homeFragRv.adapter = adapter
 
         homeViewModel.fetchDataFeed()
-        homeViewModel.measuredDateList.observe(viewLifecycleOwner) {
 
+        homeViewModel.measuredDataList.observe(viewLifecycleOwner) {
             if (it.isNullOrEmpty()) {
-                binding.textOnScreen = "No patient list found"
+                binding.noListNotificationTv.visibility = View.VISIBLE
+                AppUtils.showToast(requireContext(), "No patient list found")
             } else {
-                binding.textOnScreen = null
+                binding.noListNotificationTv.visibility = View.GONE
                 adapter.setItems(it)
             }
         }

@@ -4,6 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
+        <import type="android.view.View"/>
+
         <variable
             name="textOnScreen"
             type="String" />
@@ -38,11 +41,12 @@
             app:layout_constraintBottom_toBottomOf="@+id/home_frag_rv"
             app:layout_constraintTop_toBottomOf="@+id/home_app_bar"
             android:textSize="@dimen/text_30sp"
-            android:text="@{textOnScreen}"
+            android:text="@string/no_patients_found"
+            android:visibility="gone"
             android:padding="@dimen/margin_8"
             android:fontFamily="@font/convergence"
             android:textAlignment="center"
-            tools:text="NOTHING" />
+            />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/home_frag_rv"
@@ -50,6 +54,7 @@
             android:layout_height="0dp"
             android:layout_margin="@dimen/margin_8"
             android:orientation="vertical"
+
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
