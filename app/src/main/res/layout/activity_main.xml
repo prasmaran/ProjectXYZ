@@ -5,7 +5,7 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity">
     <!--android:paddingTop="?attr/actionBarSize"-->
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -21,6 +21,9 @@
         android:padding="@dimen/margin_5"
         app:itemIconTint="@color/custom_colour_navigation"
         app:itemTextColor="@color/custom_colour_navigation"
+
+        app:labelVisibilityMode="auto"
+
         app:menu="@menu/bottom_nav_menu" />
 
     <fragment

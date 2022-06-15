@@ -9,17 +9,32 @@
         android:id="@+id/navigation_home"
         android:name="com.example.projectxyz.ui.home.HomeFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_patient_list"
+            app:destination="@id/navigation_patient_list" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_patient_list"
         android:name="com.example.projectxyz.ui.patientList.PatientsListFragment"
         android:label="@string/title_patient_list"
-        tools:layout="@layout/fragment_patient_list" />
+        tools:layout="@layout/fragment_patient_list" >
+        <argument
+            android:name="userData"
+            app:argType="com.example.projectxyz.model.user_list.UserList" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_create_patient"
         android:name="com.example.projectxyz.ui.create.CreatePatientFragment"
         android:label="@string/title_create_patient"
-        tools:layout="@layout/fragment_create_patient" />
+        tools:layout="@layout/fragment_create_patient" >
+        <action
+            android:id="@+id/action_navigation_create_patient_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/navigation_home"
+            app:popUpToInclusive="true" />
+    </fragment>
 </navigation>

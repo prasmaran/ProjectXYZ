@@ -3,10 +3,26 @@
     <string name="app_name">ProjectXYZ</string>
     <string name="title_home">Home</string>
     <string name="title_patient_list">Patients List</string>
-    <string name="title_create_patient">Create</string>
+    <string name="title_create_patient">Create New Patient</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <!-- Create new patient -->
+    <string name="patient_name">Patient name</string>
+    <string name="patient_ic">IC Number</string>
+    <string name="patient_age">Patient age</string>
+    <string name="patient_disease">Diseases/Illness</string>
+    <string name="patient_gender">Gender</string>
+    <string name="patient_register">Register</string>
 
+    <!-- Validate new register -->
+    <string name="enter_valid_name">Please enter valid name</string>
+    <string name="enter_valid_age">Please enter valid age</string>
+    <string name="enter_valid_ic">Please enter valid IC number</string>
+    <string name="enter_valid_illness">Do not leave empty</string>
+    <string name="validated">Input successfully validated</string>
 
-
-
+    <!-- Error showing -->
+    <string name="no_patients_found">No patient list found</string>
+    <string name="measured_data">Measured Data</string>
+    <string name="measured_data_chart">Data Chart</string>
 </resources>
