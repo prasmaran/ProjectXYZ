@@ -11,6 +11,7 @@
     <string name="patient_ic">IC Number</string>
     <string name="patient_age">Patient age</string>
     <string name="patient_disease">Diseases/Illness</string>
+    <string name="patient_gender">Gender</string>
     <string name="patient_register">Register</string>
 
     <!-- Validate new register -->
@@ -22,4 +23,6 @@
 
     <!-- Error showing -->
     <string name="no_patients_found">No patient list found</string>
+    <string name="measured_data">Measured Data</string>
+    <string name="measured_data_chart">Data Chart</string>
 </resources>

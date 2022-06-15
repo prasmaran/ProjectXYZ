@@ -6,10 +6,10 @@
         android:icon="@drawable/selector_home_icon"
         android:title="@string/title_home" />
 
-    <item
-        android:id="@+id/navigation_patient_list"
-        android:icon="@drawable/selector_list_icon"
-        android:title="@string/title_patient_list" />
+<!--    <item-->
+<!--        android:id="@+id/navigation_patient_list"-->
+<!--        android:icon="@drawable/selector_list_icon"-->
+<!--        android:title="@string/title_patient_list" />-->
 
     <item
         android:id="@+id/navigation_create_patient"

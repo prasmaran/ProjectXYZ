@@ -12,6 +12,7 @@ import com.example.projectxyz.R
 import com.example.projectxyz.model.user_list.UserList
 import com.example.projectxyz.ui.home.HomeFragmentDirections
 import com.example.projectxyz.utils.adapter.HomeFragmentRVAdapter
+import java.util.*
 
 //class BindingAdapters {
 //
@@ -55,7 +56,7 @@ fun loadImageFromDrawable(imageView: ImageView, gender: String) {
     val maleUser =
         "https://firebasestorage.googleapis.com/v0/b/tester-7b593.appspot.com/o/ic_user_male.PNG?alt=media&token=5fe8f3ae-79bf-4bb6-aa9b-9d08708693ea"
 
-    val finalImage = if (gender.toLowerCase().contains("female")) femaleUser else maleUser
+    val finalImage = if (gender.lowercase(Locale.getDefault()).contains("female")) femaleUser else maleUser
     imageView.load(finalImage) {
         placeholder(R.drawable.downloading)
         error(R.drawable.ic_user_male)

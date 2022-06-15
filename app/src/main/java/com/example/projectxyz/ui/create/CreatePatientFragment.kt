@@ -28,6 +28,7 @@ class CreatePatientFragment : BaseFragment() {
 
     private var patientName = ""
     private var patientAge = ""
+    private var patientGender = ""
     private var patientIC = ""
     private var patientIllness = ""
 
@@ -54,6 +55,7 @@ class CreatePatientFragment : BaseFragment() {
 
             patientName = binding.patientNameEt.editText?.text.toString().trim()
             patientAge = binding.patientAgeEt.editText?.text.toString().trim()
+            patientGender = binding.patientGenderEt.editText?.text.toString().trim()
             patientIC = binding.patientIcEt.editText?.text.toString().trim()
             patientIllness = binding.patientIllnessEt.editText?.text.toString().trim()
 
@@ -62,7 +64,7 @@ class CreatePatientFragment : BaseFragment() {
                     patientName,
                     patientIC,
                     patientAge,
-                    "Female",
+                    patientGender,
                     patientIllness
                 )
                 val mappedNewUser = newPatient.toMap()
