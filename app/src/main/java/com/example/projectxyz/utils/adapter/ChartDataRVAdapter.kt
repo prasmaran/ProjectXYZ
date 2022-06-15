@@ -8,25 +8,11 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.ChartDataRowItemBinding
-import com.example.projectxyz.model.user_list.DataMeasured
-import kotlin.collections.ArrayList
+import com.example.projectxyz.model.meanValue.MeanValueChartData
 
 class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    private val chartDataList = mutableListOf<DataMeasured?>()
-    private val meanChartDataList = mutableListOf<Double?>()
-
-    private var dataNumber = 0
-    private val dataReference : ArrayList<String> = arrayListOf(
-        "Baseline(Pre test)",
-        "After knee extension with resistance (3sets)",
-        "Baseline (Post knee extension test)",
-        "After squat without load",
-        "After squat with load(1RM)",
-        "After squat with load(2RM)",
-        "After squat with load(3RM)",
-        "Baseline (Post Squat test)"
-    )
+    private val chartDataList = mutableListOf<MeanValueChartData?>()
 
     inner class ChartDataItemViewHolder(parent: ViewGroup) : RecyclerView.ViewHolder(
         LayoutInflater.from(parent.context).inflate(R.layout.chart_data_row_item, parent, false)
@@ -34,14 +20,14 @@ class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         private val binding = ChartDataRowItemBinding.bind(itemView)
 
-        fun onBind(chartDataItem: DataMeasured?) {
+        fun onBind(chartDataItem: MeanValueChartData?) {
 
-            binding.dataName = dataReference[dataNumber]
+            binding.dataName = chartDataItem?.dataTestName.toString()
             binding.xAxis = chartDataItem?.x_axis.toString()
             binding.yAxis = chartDataItem?.y_axis.toString()
             binding.zAxis = chartDataItem?.z_axis.toString()
-            binding.meanMmg = "= ${meanChartDataList[dataNumber]}"
-            dataNumber++
+            binding.meanMmg = "= ${chartDataItem?.meanValue.toString()}"
+
         }
     }
 
@@ -58,11 +44,9 @@ class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setItems(chartDataListItems: List<DataMeasured>, meanChartDataList: List<Double>) {
+    fun setItems(chartDataListItems: List<MeanValueChartData>) {
         this.chartDataList.clear()
         this.chartDataList.addAll(chartDataListItems)
-        this.meanChartDataList.clear()
-        this.meanChartDataList.addAll(meanChartDataList)
         notifyDataSetChanged()
     }
 

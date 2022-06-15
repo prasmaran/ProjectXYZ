@@ -4,7 +4,6 @@ package com.example.projectxyz.utils.repository
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
-import coil.request.SuccessResult
 import com.example.projectxyz.model.user_list.UserList
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -52,11 +51,6 @@ class PatientListRepository {
                 Log.i("TAG-FAIL-WRITE", "CREATION FAILED")
                 liveData.postValue(false)
             }
-//        dataFeedReference.child(newPatient.patient_name.toString()).child("patient").setValue(newPatient.patient_name)
-//        dataFeedReference.child(newPatient.patient_name.toString()).child("ic_number").setValue(newPatient.patient_ic_number)
-//        dataFeedReference.child(newPatient.patient_name.toString()).child("gender").setValue(newPatient.patient_gender)
-//        dataFeedReference.child(newPatient.patient_name.toString()).child("age").setValue(newPatient.patient_age)
-//        dataFeedReference.child(newPatient.patient_name.toString()).child("illness").setValue(newPatient.patient_illness)
     }
 
 }

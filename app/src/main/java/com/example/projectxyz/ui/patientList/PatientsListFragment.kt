@@ -1,6 +1,7 @@
 package com.example.projectxyz.ui.patientList
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,12 +11,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.navArgs
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.FragmentPatientListBinding
+import com.example.projectxyz.model.meanValue.MeanValueChartData
 import com.example.projectxyz.model.user_list.DataMeasured
 import com.example.projectxyz.utils.adapter.ChartDataRVAdapter
 import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.Entry
 import com.github.mikephil.charting.data.LineData
 import com.github.mikephil.charting.data.LineDataSet
+import com.google.firebase.database.PropertyName
 import java.math.RoundingMode
 import java.text.DecimalFormat
 import kotlin.math.pow
@@ -26,8 +29,19 @@ class PatientsListFragment : Fragment() {
     private var _binding: FragmentPatientListBinding? = null
     private val args by navArgs<PatientsListFragmentArgs>()
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private val dataReference = arrayOf(
+        "Baseline (Pre test)",
+        "After knee extension with resistance (3sets)",
+        "Baseline (Post knee extension test)",
+        "After squat without load",
+        "After squat with load (1RM)",
+        "After squat with load (2RM)",
+        "After squat with load (3RM)",
+        "Baseline (Post Squat test)"
+    )
+
+    private val meanValueList = mutableListOf<MeanValueChartData>()
+
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -57,6 +71,21 @@ class PatientsListFragment : Fragment() {
             ).toDouble()
         }
 
+        if (meanValue != null) {
+            for (i in meanValue.indices){
+                val itemMeanDataChart = MeanValueChartData(
+                    dataReference[i],
+                    entries[i].x_axis,
+                    entries[i].y_axis,
+                    entries[i].z_axis,
+                    meanValue[i]
+                )
+                meanValueList.add(itemMeanDataChart)
+            }
+        }
+
+        Log.i("MeanValueChartData", meanValueList.toString()  )
+
         val adapter = ChartDataRVAdapter()
         binding.chartDataRv.adapter = adapter
 
@@ -72,9 +101,7 @@ class PatientsListFragment : Fragment() {
 
         if (entries != null) {
             if (meanValue != null) {
-                println(entries)
-                println(meanValue)
-                adapter.setItems(entries, meanValue)
+                adapter.setItems(meanValueList)
             }
         }
 
@@ -131,9 +158,3 @@ class PatientsListFragment : Fragment() {
         _binding = null
     }
 }
-
-data class MeanValueChartData(
-    val dataName: String,
-    val dataMeasured: List<DataMeasured>,
-    val meanValue: List<Double>
-)

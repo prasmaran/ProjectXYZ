@@ -52,7 +52,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/patient_name_textView"
+                    android:id="@+id/test_name"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
@@ -82,9 +82,9 @@
                     android:textColor="@color/darkGray"
                     android:textSize="@dimen/text_15sp"
                     app:drawableStartCompat="@drawable/ic_x"
-                    app:layout_constraintEnd_toEndOf="@+id/patient_name_textView"
+                    app:layout_constraintEnd_toEndOf="@+id/test_name"
                     app:layout_constraintStart_toStartOf="@id/x_value_tv"
-                    app:layout_constraintTop_toBottomOf="@+id/patient_name_textView" />
+                    app:layout_constraintTop_toBottomOf="@+id/test_name" />
 
                 <TextView
                     android:id="@+id/y_value_tv"
