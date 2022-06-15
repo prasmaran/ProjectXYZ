@@ -1,3 +1,5 @@
+@file:Suppress("IllegalIdentifier")
+
 package com.example.projectxyz.model.user_list
 
 import android.os.Parcelable

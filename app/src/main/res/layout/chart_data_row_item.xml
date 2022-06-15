@@ -19,6 +19,9 @@
             name="z_axis"
             type="String" />
         <variable
+            name="mean_mmg"
+            type="String" />
+        <variable
             name="data_name"
             type="String" />
 
@@ -27,7 +30,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/patientListRowLayout"
         android:layout_width="@dimen/margin_150"
-        android:layout_height="@dimen/margin_180"
+        android:layout_height="@dimen/margin_200"
         android:layout_margin="@dimen/margin_5"
         android:layout_marginBottom="@dimen/margin_5">
 
@@ -67,7 +70,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/patient_ic_number_textView"
+                    android:id="@+id/x_value_tv"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="12dp"
@@ -80,11 +83,11 @@
                     android:textSize="@dimen/text_15sp"
                     app:drawableStartCompat="@drawable/ic_x"
                     app:layout_constraintEnd_toEndOf="@+id/patient_name_textView"
-                    app:layout_constraintStart_toStartOf="@id/patient_ic_number_textView"
+                    app:layout_constraintStart_toStartOf="@id/x_value_tv"
                     app:layout_constraintTop_toBottomOf="@+id/patient_name_textView" />
 
                 <TextView
-                    android:id="@+id/patient_gender_textView"
+                    android:id="@+id/y_value_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -94,12 +97,12 @@
                     android:textColor="@color/darkGray"
                     android:textSize="@dimen/text_15sp"
                     app:drawableStartCompat="@drawable/ic_y"
-                    app:layout_constraintEnd_toEndOf="@+id/patient_ic_number_textView"
-                    app:layout_constraintStart_toStartOf="@+id/patient_ic_number_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/patient_ic_number_textView" />
+                    app:layout_constraintEnd_toEndOf="@+id/x_value_tv"
+                    app:layout_constraintStart_toStartOf="@+id/x_value_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/x_value_tv" />
 
                 <TextView
-                    android:id="@+id/patient_illness_textView"
+                    android:id="@+id/z_value_tv"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -112,9 +115,29 @@
                     android:textColor="@color/darkGray"
                     android:textSize="@dimen/text_15sp"
                     app:drawableStartCompat="@drawable/ic_z"
-                    app:layout_constraintEnd_toEndOf="@+id/patient_gender_textView"
-                    app:layout_constraintStart_toStartOf="@+id/patient_gender_textView"
-                    app:layout_constraintTop_toBottomOf="@+id/patient_gender_textView" />
+                    app:layout_constraintEnd_toEndOf="@+id/y_value_tv"
+                    app:layout_constraintStart_toStartOf="@+id/y_value_tv"
+                    app:layout_constraintTop_toBottomOf="@+id/y_value_tv" />
+
+                <TextView
+                    android:id="@+id/mean_mmg_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="12dp"
+                    android:drawablePadding="@dimen/margin_5"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:maxLines="2"
+                    android:text="@{mean_mmg}"
+                    android:textColor="@color/darkGray"
+                    android:textSize="@dimen/text_15sp"
+                    app:drawableStartCompat="@drawable/ic_mmg"
+
+                    app:layout_constraintEnd_toEndOf="@+id/y_value_tv"
+                    app:layout_constraintStart_toStartOf="@+id/y_value_tv"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/z_value_tv" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

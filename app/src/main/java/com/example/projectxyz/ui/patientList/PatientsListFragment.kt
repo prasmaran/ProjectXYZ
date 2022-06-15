@@ -41,9 +41,6 @@ class PatientsListFragment : Fragment() {
         _binding = FragmentPatientListBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val adapter = ChartDataRVAdapter()
-        binding.chartDataRv.adapter = adapter
-
         val data = args.userData.data?.toSortedMap()
         val entries: List<DataMeasured>? = data?.keys?.map { data[it]!! }
 
@@ -60,6 +57,9 @@ class PatientsListFragment : Fragment() {
             ).toDouble()
         }
 
+        val adapter = ChartDataRVAdapter()
+        binding.chartDataRv.adapter = adapter
+
         setDataItems(meanValue)
 
         args.userData.also {
@@ -71,13 +71,16 @@ class PatientsListFragment : Fragment() {
         }
 
         if (entries != null) {
-            adapter.setItems(entries)
+            if (meanValue != null) {
+                println(entries)
+                println(meanValue)
+                adapter.setItems(entries, meanValue)
+            }
         }
 
         "${args.userData.patient_name}'s data chart".also {
             binding.patientListFragToolbar.toolbarTitle.text = it
         }
-
 
         return root
     }
@@ -128,3 +131,9 @@ class PatientsListFragment : Fragment() {
         _binding = null
     }
 }
+
+data class MeanValueChartData(
+    val dataName: String,
+    val dataMeasured: List<DataMeasured>,
+    val meanValue: List<Double>
+)

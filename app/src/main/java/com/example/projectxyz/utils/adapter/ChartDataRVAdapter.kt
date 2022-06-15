@@ -1,3 +1,5 @@
+@file:Suppress("IllegalIdentifier")
+
 package com.example.projectxyz.utils.adapter
 
 import android.annotation.SuppressLint
@@ -7,12 +9,13 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.ChartDataRowItemBinding
 import com.example.projectxyz.model.user_list.DataMeasured
-import java.util.*
 import kotlin.collections.ArrayList
 
 class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private val chartDataList = mutableListOf<DataMeasured?>()
+    private val meanChartDataList = mutableListOf<Double?>()
+
     private var dataNumber = 0
     private val dataReference : ArrayList<String> = arrayListOf(
         "Baseline(Pre test)",
@@ -37,6 +40,7 @@ class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
             binding.xAxis = chartDataItem?.x_axis.toString()
             binding.yAxis = chartDataItem?.y_axis.toString()
             binding.zAxis = chartDataItem?.z_axis.toString()
+            binding.meanMmg = "= ${meanChartDataList[dataNumber]}"
             dataNumber++
         }
     }
@@ -54,9 +58,11 @@ class ChartDataRVAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    fun setItems(chartDataListItems: List<DataMeasured>) {
+    fun setItems(chartDataListItems: List<DataMeasured>, meanChartDataList: List<Double>) {
         this.chartDataList.clear()
         this.chartDataList.addAll(chartDataListItems)
+        this.meanChartDataList.clear()
+        this.meanChartDataList.addAll(meanChartDataList)
         notifyDataSetChanged()
     }
 

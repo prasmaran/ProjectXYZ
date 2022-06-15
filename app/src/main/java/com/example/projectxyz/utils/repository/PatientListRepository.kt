@@ -1,3 +1,5 @@
+@file:Suppress("IllegalIdentifier")
+
 package com.example.projectxyz.utils.repository
 
 import android.util.Log
