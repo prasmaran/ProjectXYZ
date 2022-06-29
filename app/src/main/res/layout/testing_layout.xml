@@ -30,7 +30,6 @@
                 android:layout_width="@dimen/margin_150"
                 android:layout_height="0dp"
                 android:background="@drawable/gradient"
-                android:contentDescription="TODO"
                 android:padding="@dimen/margin_20"
                 android:scaleType="centerCrop"
                 android:src="@drawable/ic_user_male"

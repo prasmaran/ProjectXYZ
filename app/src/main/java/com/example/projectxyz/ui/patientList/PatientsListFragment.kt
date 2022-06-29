@@ -30,14 +30,18 @@ class PatientsListFragment : Fragment() {
     private val args by navArgs<PatientsListFragmentArgs>()
 
     private val dataReference = arrayOf(
-        "Baseline (Pre test)",
-        "After knee extension with resistance (3sets)",
-        "Baseline (Post knee extension test)",
-        "After squat without load",
-        "After squat with load (1RM)",
-        "After squat with load (2RM)",
-        "After squat with load (3RM)",
-        "Baseline (Post Squat test)"
+        "Baseline (Pre Knee Extension Test)",
+        "Baseline (Pre Squat Test)",
+        "Knee Extension Set 1 (With Load)",
+        "Knee Extension Set (With Load)",
+        "Knee Extension Set 3 (With Load)",
+        "Baseline (Post Knee Extension Test)",
+        "Half Squat (Without Load)",
+        "Half Squat Set 1 (With Load)",
+        "Half Squat Set 2 (With Load)",
+        "Half Squat Set 3 (With Load)",
+        "Baseline (Post Squat Test)",
+        "Baseline (Post Knee Extension Test 2)"
     )
 
     private val meanValueList = mutableListOf<MeanValueChartData>()
