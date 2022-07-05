@@ -272,7 +272,7 @@
             android:layout_marginTop="@dimen/margin_15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/measured_data"
+            android:text="Measured Data"
             android:textSize="@dimen/text_30sp"
             android:textAlignment="center"
             android:fontFamily="@font/convergence"
@@ -294,7 +294,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/convergence"
-            android:text="@string/measured_data"
+            android:text="@string/measured_data_mmg"
             android:textAlignment="center"
             android:textSize="@dimen/text_30sp"
             android:layout_marginTop="@dimen/margin_15"
@@ -309,6 +309,72 @@
             android:layout_margin="@dimen/margin_5"
             android:padding="@dimen/margin_5"
             app:layout_constraintTop_toBottomOf="@+id/patient_chart_tv"
+            />
+
+        <TextView
+            android:id="@+id/line_chart_x_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:text="@string/measured_data_x"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_30sp"
+            android:layout_marginTop="@dimen/margin_15"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart_x"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_250"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/margin_5"
+            android:padding="@dimen/margin_5"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart_x_title"
+            />
+
+        <TextView
+            android:id="@+id/line_chart_y_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:text="@string/measured_data_y"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_30sp"
+            android:layout_marginTop="@dimen/margin_15"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart_x" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart_y"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_250"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/margin_5"
+            android:padding="@dimen/margin_5"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart_y_title"
+            />
+
+        <TextView
+            android:id="@+id/line_chart_z_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:text="@string/measured_data_z"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_30sp"
+            android:layout_marginTop="@dimen/margin_15"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart_y" />
+
+        <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_chart_z"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/margin_250"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_margin="@dimen/margin_5"
+            android:padding="@dimen/margin_5"
+            app:layout_constraintTop_toBottomOf="@+id/line_chart_z_title"
             app:layout_constraintBottom_toBottomOf="parent"
             />
 

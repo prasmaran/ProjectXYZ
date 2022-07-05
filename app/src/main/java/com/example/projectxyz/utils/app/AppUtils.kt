@@ -27,6 +27,13 @@ class AppUtils {
             }.show()
         }
 
+        // handle lineDataSet properties
+        fun <T: Any, R: Any> Collection<T?>.whenAllNotNull(block: (List<T>)->R) {
+            if (this.all { it != null }) {
+                block(this.filterNotNull()) // or do unsafe cast to non null collection
+            }
+        }
+
         // Custom dialog fragment function
         fun showDialogFragment(
             dialogFragment: DialogFragment,

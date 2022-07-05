@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="app_name">ProjectXYZ</string>
+    <string name="app_name">Project MMG</string>
     <string name="title_home">Home</string>
     <string name="title_patient_list">Patients List</string>
     <string name="title_create_patient">Create New Patient</string>
@@ -23,6 +23,9 @@
 
     <!-- Error showing -->
     <string name="no_patients_found">No patient list found</string>
-    <string name="measured_data">Measured Data</string>
     <string name="measured_data_chart">Data Chart</string>
+    <string name="measured_data_mmg">Measured Data MMG</string>
+    <string name="measured_data_x">Measured Data X</string>
+    <string name="measured_data_y">Measured Data Y</string>
+    <string name="measured_data_z">Measured Data Z</string>
 </resources>
