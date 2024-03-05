@@ -1,6 +1,7 @@
 <resources>
 
     <string name="app_name">Project MMG</string>
+    <string name="admin_console">Admin Console</string>
     <string name="title_home">Home</string>
     <string name="title_patient_list">Patients List</string>
     <string name="title_create_patient">Create New Patient</string>
@@ -28,4 +29,6 @@
     <string name="measured_data_x">Measured Data X</string>
     <string name="measured_data_y">Measured Data Y</string>
     <string name="measured_data_z">Measured Data Z</string>
+    <string name="password">Password</string>
+    <string name="email">Email or Username</string>
 </resources>

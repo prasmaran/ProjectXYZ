@@ -53,6 +53,11 @@ class HomeFragment : Fragment() {
             }
         }
 
+        binding.fabBtn.setOnClickListener {
+            binding.homeFragRv.smoothScrollToPosition(0)
+        }
+
+
         return root
     }
 

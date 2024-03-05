@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SplashScreenActivity">
+    tools:context=".ui.splashscreen.SplashScreenActivity">
 
     <ImageView
         android:layout_width="match_parent"
@@ -17,13 +17,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="@dimen/margin_40"
         android:orientation="vertical"
         android:gravity="center">
 
         <com.airbnb.lottie.LottieAnimationView
-            android:layout_width="300dp"
-            android:layout_height="300dp"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
             app:lottie_autoPlay="true"
             app:lottie_speed="0.5"
             app:lottie_loop="true"
@@ -34,13 +35,92 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/convergence"
             android:text="@string/app_name"
-            android:layout_marginBottom="@dimen/margin_60"
+            android:layout_marginBottom="@dimen/margin_10"
             android:letterSpacing="0.02"
             android:textColor="@color/black"
-            android:textSize="35sp"
+            android:textSize="30sp"
             android:textStyle="bold" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/convergence"
+            android:text="@string/admin_console"
+            android:layout_marginBottom="@dimen/margin_30"
+            android:letterSpacing="0.02"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_email_etvl"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:hint="@string/email"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:startIconDrawable="@drawable/selector_email_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_email_etv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/user_password_etvl"
+            android:theme="@style/ThemeOverlay.AppTheme.TextInputEditText.Outlined"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginEnd="@dimen/dimen_16"
+            android:hint="@string/password"
+            app:errorEnabled="true"
+            app:endIconMode="password_toggle"
+            app:errorIconDrawable="@drawable/ic_error"
+            app:startIconDrawable="@drawable/selector_password_icon">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/user_password_etv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
     </LinearLayout>
+
+    <!--Card view with progress bar with transparent 50%-->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/progress_card_view"
+        android:layout_width="@dimen/margin_100"
+        android:layout_height="@dimen/margin_100"
+        android:layout_marginTop="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_centerInParent="true"
+        tools:visibility="visible"
+        android:visibility="gone"
+        app:cardCornerRadius="@dimen/margin_8"
+        app:cardElevation="0dp"
+        app:cardBackgroundColor="#80000000">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="@dimen/margin_50"
+            android:layout_height="@dimen/margin_50"
+            android:layout_gravity="center"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/white" />
+
+    </androidx.cardview.widget.CardView>
 
     <Button
         android:id="@+id/continue_btn"
