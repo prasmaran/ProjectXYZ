@@ -2,7 +2,7 @@ package com.example.projectxyz.ui
 
 import android.os.Bundle
 import android.view.View
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
@@ -11,14 +11,25 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.projectxyz.R
 import com.example.projectxyz.databinding.ActivityMainBinding
+import com.example.projectxyz.ui.splashscreen.SplashScreenActivity
+import com.example.projectxyz.ui.splashscreen.SplashScreenViewModel
+import com.example.projectxyz.utils.app.AppUtils.Companion.navigateTo
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
     private lateinit var binding: ActivityMainBinding
 
+    private val splashScreenViewModel : SplashScreenViewModel by viewModels()
+    private val TAG = "MainActivity"
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        if (splashScreenViewModel.currentUser == null || splashScreenViewModel.isUserLoggedIn.value == false) {
+            navigateTo(SplashScreenActivity::class.java, true)
+        }
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -47,5 +58,6 @@ class MainActivity : AppCompatActivity() {
         navView.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
+
 
 }

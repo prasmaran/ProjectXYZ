@@ -10,6 +10,7 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.projectxyz.databinding.ActivitySplashScreenBinding
 import com.example.projectxyz.ui.MainActivity
+import com.example.projectxyz.utils.app.AppUtils.Companion.navigateTo
 
 @SuppressLint("CustomSplashScreen")
 class SplashScreenActivity : AppCompatActivity() {
@@ -42,7 +43,7 @@ class SplashScreenActivity : AppCompatActivity() {
                             Log.d(TAG, "Success")
                             binding.progressCardView.visibility = View.GONE
                             splashScreenViewModel.saveUserLoginTime(System.currentTimeMillis())
-                            navigateTo(MainActivity::class.java)
+                            navigateTo(MainActivity::class.java, true)
                         }
                         is Resource.Failure -> {
                             Log.d(TAG, "Failure")
@@ -67,15 +68,9 @@ class SplashScreenActivity : AppCompatActivity() {
         splashScreenViewModel.currentUser.let {
             if (it != null) {
                 Log.d(TAG, "User is already signed in")
-                navigateTo(MainActivity::class.java)
+                navigateTo(MainActivity::class.java, true)
             }
         }
     }
 
-    private fun navigateTo(cls: Class<*>) {
-        val intent = Intent(this@SplashScreenActivity, cls)
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
-        startActivity(intent)
-        finish()
-    }
 }

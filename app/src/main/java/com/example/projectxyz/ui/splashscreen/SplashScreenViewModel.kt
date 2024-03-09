@@ -20,6 +20,10 @@ class SplashScreenViewModel(application: Application) : AndroidViewModel(applica
     private val _loginFlow = MutableLiveData<Resource<FirebaseUser>?>(null)
     val loginFlow: LiveData<Resource<FirebaseUser>?> = _loginFlow
 
+    // Boolean value to check if user is logged in using livedata
+    private val _isUserLoggedIn = MutableLiveData(false)
+    val isUserLoggedIn: LiveData<Boolean> = _isUserLoggedIn
+
     private val userLoggedInTimeFlow: Flow<Long> = dataStoreRepository.userLoginTime
 
     // Function to save user login time
@@ -37,8 +41,10 @@ class SplashScreenViewModel(application: Application) : AndroidViewModel(applica
                 val isUserExpired = isLoginTimeExpired(userLoggedInTimeFlow)
                 isUserExpired.collect { isExpired ->
                     if (!isExpired) {
+                        _isUserLoggedIn.value = true
                         _loginFlow.value = Resource.Success(currentUser)
                     } else {
+                        _isUserLoggedIn.value = false
                         logout()
                     }
                 }
@@ -49,7 +55,8 @@ class SplashScreenViewModel(application: Application) : AndroidViewModel(applica
     private fun isLoginTimeExpired(loginTimeFlow: Flow<Long>): Flow<Boolean> {
         return loginTimeFlow.map { currentTime ->
             val timeDifference = System.currentTimeMillis() - currentTime
-            timeDifference > 60 * 60 * 1000 // 1 hour in milliseconds
+            timeDifference > 30 * 60 * 1000 // 1 hour in milliseconds
+            // timeDifference > 60 * 1000 // 1 minutes in milliseconds
         }
     }
 
@@ -58,10 +65,12 @@ class SplashScreenViewModel(application: Application) : AndroidViewModel(applica
         val result = userAuthRepository.signIn(email, password, _loginFlow)
     }
 
-    private suspend fun logout() {
-        userAuthRepository.logout()
-        dataStoreRepository.clearUserLoginTime()
-        _loginFlow.value = null
+    private fun logout() {
+        viewModelScope.launch {
+            userAuthRepository.logout()
+            dataStoreRepository.clearUserLoginTime()
+            _loginFlow.value = null
+        }
     }
 }
 
